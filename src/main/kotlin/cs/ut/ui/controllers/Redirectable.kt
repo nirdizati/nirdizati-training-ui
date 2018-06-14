@@ -10,8 +10,6 @@ import org.zkoss.zk.ui.Executions
 import org.zkoss.zk.ui.Page
 import org.zkoss.zk.ui.event.Event
 import org.zkoss.zk.ui.select.Selectors
-import org.zkoss.zkmax.zul.Navbar
-import org.zkoss.zkmax.zul.Navitem
 import org.zkoss.zul.Include
 import java.util.Timer
 import kotlin.concurrent.timerTask

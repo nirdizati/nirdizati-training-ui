@@ -1,6 +1,5 @@
 package cs.ut.ui.controllers
 
-import com.lowagie.text.pdf.codec.Base64
 import cs.ut.configuration.ConfigFetcher
 import cs.ut.configuration.ConfigurationReader
 import cs.ut.engine.Cache
@@ -20,6 +19,7 @@ import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
 import java.nio.charset.Charset
+import javax.xml.bind.DatatypeConverter
 
 class AdminViewController : SelectorComposer<Component>(), UIComponent {
     val log = NirdizatiLogger.getLogger(AdminViewController::class, getSessionId())
@@ -102,7 +102,7 @@ class AdminViewController : SelectorComposer<Component>(), UIComponent {
     private fun isAuthorized(): Boolean {
         passwordField.clearErrorMessage()
         return configNode.isEnabled() && (!configNode.valueWithIdentifier("isPasswordRequired").value<Boolean>() ||
-                Base64.encodeBytes(
+                DatatypeConverter.printBase64Binary(
                     (passwordField.value ?: "").toByteArray(Charset.forName("UTF-8"))
                 ) == configNode.valueWithIdentifier("password").value)
     }

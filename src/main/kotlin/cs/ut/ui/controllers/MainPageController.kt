@@ -18,7 +18,6 @@ import org.zkoss.zk.ui.event.Events
 import org.zkoss.zk.ui.select.SelectorComposer
 import org.zkoss.zk.ui.select.annotation.Listen
 import org.zkoss.zk.ui.select.annotation.Wire
-import org.zkoss.zkmax.zul.Navbar
 import org.zkoss.zul.Borderlayout
 import org.zkoss.zul.East
 import java.util.NoSuchElementException
