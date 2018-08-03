@@ -40,6 +40,8 @@ class AdvancedModeAdapter : GridValueProvider<GeneratorArgument, Row> {
             this.vflex = "1"
             this.align = "center"
             this.appendChild(label)
+        })
+        row.appendChild(Hbox().apply {
             this.appendChild(getTooltip(data.id, icons))
         })
 
@@ -59,6 +61,9 @@ class AdvancedModeAdapter : GridValueProvider<GeneratorArgument, Row> {
 
                         it.appendChild(checkBox)
                         it.appendChild(nameLabel)
+                    })
+            row.appendChild(
+                    Hbox().also {
                         it.appendChild(getTooltip(param.id, icons))
                     })
         }
